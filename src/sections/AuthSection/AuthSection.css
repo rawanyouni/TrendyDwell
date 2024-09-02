@@ -1,0 +1,305 @@
+.BackgroundImgLogo {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.logoImg {
+  position: absolute;
+  left: 0vw;
+  bottom: 0vh;
+  border-radius: 50%;
+}
+.authMessageClassName {
+  display: none;
+}
+.containerAuth {
+  background: #f6f5f7;
+
+  background: linear-gradient(
+    to right,
+
+    rgba(70, 110, 110, 0.92),
+    rgba(144, 164, 164, 0.8),
+    rgba(120, 144, 144, 0.6)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* position: relative; */
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  min-height: 480px;
+  width: 40vw;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+.overlay-container {
+  /* background-image: url("../../assets/logo.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-position: center bottom; */
+  border-radius: 120px 0 0 90px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  /* transition: transform 0.6s ease-in-out; */
+  z-index: 100;
+  transition: all 0.5s;
+}
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+.overlay-left {
+  transform: translateX(-20%);
+}
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+.overlay {
+  background-color: var(--mainColor);
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+  border-radius: 0 120px 90px 0px;
+}
+@keyframes changeBorder {
+  0%,
+  49.99% {
+    border-radius: 120px 0 0 90px;
+  }
+
+  50%,
+  100% {
+    border-radius: 0 120px 90px 0px;
+  }
+}
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+@media (min-width: 1800px) {
+  .container {
+    width: 40vw;
+  }
+  .logoImg {
+    width: 800px;
+    height: 800px;
+  }
+  .mobileScreen {
+    display: none;
+  }
+}
+@media (min-width: 992px) and (max-width: 1799px) {
+  .container {
+    width: 45vw;
+  }
+
+  .logoImg {
+    width: 750px;
+    height: 750px;
+  }
+  .mobileScreen {
+    display: none;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1799px) {
+  .container {
+    width: 47vw;
+  }
+  .logoImg {
+    width: 720px;
+    height: 720px;
+  }
+  .mobileScreen {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .container {
+    width: 63vw;
+  }
+  .logoImg {
+    width: 500px;
+    height: 500px;
+  }
+  .mobileScreen {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 75vw;
+  }
+  .logoImg {
+    width: 400px;
+    height: 400px;
+  }
+  .mobileScreen {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .authMessageClassName {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .desktopScreen {
+    display: none;
+  }
+
+  .container {
+    width: 75vw;
+    min-height: 453px;
+  }
+
+  .logoImg {
+    width: 180px;
+    height: 180px;
+    bottom: 0;
+    right: 0vw !important;
+    animation: spin 2s;
+  }
+
+  .logoImg1,
+  .logoImg2,
+  .logoImg3 {
+    position: absolute;
+    border-radius: 50%;
+    /* animation: spin 1s; */
+  }
+  .logoImg1 {
+    top: 11vh;
+    right: 4vw;
+    width: 130px;
+    height: 130px;
+  }
+  @keyframes spin {
+    0% {
+      transform: translateX(100vw) rotate(0);
+    }
+    100% {
+      transform: translateX(0) rotate(360deg);
+    }
+  }
+  .logoImg2 {
+    left: -12vw;
+    top: 4%;
+    width: 155px;
+    height: 155px;
+  }
+  .logoImg3 {
+    right: 0;
+    width: 300px;
+    height: 300px;
+  }
+
+  .container-of-two-forms {
+    perspective: 1000px;
+    width: 300px;
+    width: 270px;
+
+    min-height: 453px;
+    position: relative;
+  }
+  .formComponentsContainer {
+    width: 270px;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+  }
+  .sign-in-container,
+  .sign-up-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .sign-in-container {
+    background: #f0f0f0;
+  }
+
+  .sign-up-container {
+    background: #d1e7f5;
+    transform: rotateY(180deg);
+    opacity: 1 !important;
+  }
+  .sign-up-container button {
+    margin-top: 8px;
+  }
+  .container-of-two-forms.flipped .formComponentsContainer {
+    transform: rotateY(180deg);
+  }
+
+  .toggle-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .sign-up-container h1 {
+    font-size: 20px;
+  }
+}

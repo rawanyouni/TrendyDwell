@@ -1,0 +1,44 @@
+.load {
+  display: flex;
+  border-radius: 50%;
+  margin: 50px auto;
+  justify-content: center;
+  position: absolute;
+  width: 50px;
+  /* left: 50%; */
+  left: calc(50% - 25px);
+  top: -20px;
+}
+
+.load div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: var(--mainColor);
+  animation-name: opacity;
+  animation-iteration-count: infinite;
+  /* animation-duration: 0.9s; */
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+}
+.two {
+  /* animation-delay: 0.3s; */
+  animation-delay: 0.5s;
+}
+.three {
+  animation-delay: 1s;
+}
+
+@keyframes opacity {
+  to {
+    opacity: 0.2;
+    transform: translateY(-5px);
+  }
+}
+@media (max-width: 768px) {
+  .load {
+    top: -30px;
+  }
+}
+/* animation-direction: alternate; hay 3ashen trj3 tnzl animation m trj3 t3id mnl awal */

@@ -1,0 +1,52 @@
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  /* transition: transform 2s ease-in-out; */
+}
+.overlay-right h2 {
+  /* transform: translateX(120%); */
+  transform: translateX(120%);
+  animation: showOverLayTitle 0.6s linear forwards;
+}
+@keyframes showOverLayTitle {
+  0% {
+    transform: skewX(-30deg) translateX(120%);
+  }
+  90% {
+    transform: skewX(70deg) translateX(-20%);
+  }
+
+  100% {
+    transform: skewX(0deg) translateX(0%);
+  }
+}
+button.ghost {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+.overlay-panel p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
